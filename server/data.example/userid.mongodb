@@ -1,0 +1,27 @@
+use("expensecalculator"); 
+db.users.insertMany([
+{
+    "userId": 1,
+    "name": "Rachel",
+    "email": "bla@bla.com"  
+},
+
+{
+    "userId": 2,
+    "name": "Brian",
+    "email": "brian@meme.com"
+},
+
+{
+    "userId": 3,
+    "name": "Sarah",
+    "email": "sarah@sarahhq.co.uk"  
+},
+
+{
+    "userId": 4,
+    "name": "Steven",
+    "email": "bladesste@blades.com"
+}])
+
+

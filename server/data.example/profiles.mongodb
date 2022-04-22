@@ -1,31 +1,194 @@
 // Below is some initial sample data to get you started.
 
-use("example_db"); // This is our example database. Make sure you don't call your database "example_db".
+use("expensecalculator"); // This is our example database. Make sure you don't call your database "example_db".
 
 // The drop() command destroys all data from a collection.
 // Make sure you run it against the correct database and collection.
-db.profiles.drop();
+ db.expenses.drop();
 
 // Insert a few documents into the profiles collection.
-db.profiles.insertMany([  
-    {
-        "first_name": "Efua",
-        "last_name": "Akumanyi",
-        "location": "London"
-    },
-    {
-        "first_name": "Gary",
-        "last_name": "McPherson",
-        "location": "London"
-    },
-    {
-        "first_name": "Tanya",
-        "last_name": "Powell",
-        "location": "London"
-    },
-    {
-        "first_name": "Michael",
-        "last_name": "Hael",
-        "location": "Port Harcourt city"
-    }
-]);
+//create user and recipie collection. Need to create user schema and need to create recipie schema.
+db.expenses.insertMany([
+
+{
+    "userId": 1,
+    "ingredients": [{
+            "ingredient": "Baking Powder", 
+            "cost": 1.00,
+            "packageSize": 160,
+            "unit": "grams",
+        }],
+
+    "packaging":[{
+            "packaging": "cakebox",
+            "cost": 1.00,
+            "unitsPackage": 1.00,
+            "priceUnit": 1.00,
+        }],
+              
+    "decorations": [{
+            "decoration": "powder",
+            "cost": 1.00,
+            "unitsPackage": 1.00,
+            "priceUnit": 1.00,
+        }],
+
+    "cleaning": [{
+            "item": "bleach",
+            "unitsPackage": 1.00,
+            "priceUnit": 1.00,
+
+        }],
+
+        "utilities": [{
+            "utilities": "mobilePhone",
+            "cost": 1.00,
+        }],
+        
+    "time": [{
+            "mixing": 30.00,
+            "hourlyRate": 15.00,
+            "cost": 12.00,
+            "hours": 1
+        }]
+},
+
+{
+    "userId": 2,
+    "ingredients": [{
+            "ingredient": "Baking Powder", 
+            "cost": 1.00,
+            "packageSize": 160,
+            "unit": "grams",
+        }],
+
+    "packaging":[{
+            "packaging": "cakebox",
+            "cost": 1.00,
+            "unitsPackage": 1.00,
+            "priceUnit": 1.00,
+        }],
+              
+    "decorations": [{
+            "decoration": "powder",
+            "cost": 1.00,
+            "unitsPackage": 1.00,
+            "priceUnit": 1.00,
+        }],
+
+    "cleaning": [{
+            "item": "bleach",
+            "unitsPackage": 1.00,
+            "priceUnit": 1.00,
+
+        }],
+
+        "utilities": [{
+            "utilities": "mobilePhone",
+            "cost": 1.00,
+        }],
+        
+    "time": [{
+            "mixing": 30.00,
+            "hourlyRate": 15.00,
+            "cost": 12.00,
+            "hours": 1
+        }]
+},
+
+{
+    "userId": 3,
+    "ingredients": [{
+            "ingredient": "Baking Powder", 
+            "cost": 1.00,
+            "packageSize": 160,
+            "unit": "grams",
+        }],
+
+    "packaging":[{
+            "packaging": "cakebox",
+            "cost": 1.00,
+            "unitsPackage": 1.00,
+            "priceUnit": 1.00,
+        }],
+              
+    "decorations": [{
+            "decoration": "powder",
+            "cost": 1.00,
+            "unitsPackage": 1.00,
+            "priceUnit": 1.00,
+        }],
+
+    "cleaning": [{
+            "item": "bleach",
+            "unitsPackage": 1.00,
+            "priceUnit": 1.00,
+
+        }],
+
+        "utilities": [{
+            "utilities": "mobilePhone",
+            "cost": 1.00,
+        }],
+        
+    "time": [{
+            "mixing": 30.00,
+            "hourlyRate": 15.00,
+            "cost": 12.00,
+            "hours": 1
+        }]
+},
+
+{
+    "userId": 4,
+    "ingredients": [{
+            "ingredient": "Baking Powder", 
+            "cost": 1.00,
+            "packageSize": 160,
+            "unit": "grams",
+        }],
+
+    "packaging":[{
+            "packaging": "cakebox",
+            "cost": 1.00,
+            "unitsPackage": 1.00,
+            "priceUnit": 1.00,
+        }],
+              
+    "decorations": [{
+            "decoration": "powder",
+            "cost": 1.00,
+            "unitsPackage": 1.00,
+            "priceUnit": 1.00,
+        }],
+
+    "cleaning": [{
+            "item": "bleach",
+            "unitsPackage": 1.00,
+            "priceUnit": 1.00,
+
+        }],
+
+        "utilities": [{
+            "utilities": "mobilePhone",
+            "cost": 1.00,
+        }],
+        
+    "time": [{
+            "mixing": 30.00,
+            "hourlyRate": 15.00,
+            "cost": 12.00,
+            "hours": 1
+        }]
+}])
+
+
+
+
+//User IDas a field name. Which user has each recipie//
+//Remane to expense schema//
+// Focus on expense and user//
+//Create user first before expense//
+
+
+

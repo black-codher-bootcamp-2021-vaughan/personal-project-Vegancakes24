@@ -1,11 +1,18 @@
 const mongoose = require("mongoose");
-const Profile = mongoose.model("profiles");
+const User = mongoose.model("users");
+const Expenses = mongoose.model("expenses");
 
 const profileRoutes = (app) => {
-  app.get(`/api/profile`, async (req, res) => {
-    const profiles = await Profile.find();
+  app.get(`/api/users`, async (req, res) => {
+    const users = await User.find();
 
-    return res.status(200).send(profiles);
+    return res.status(200).send(users);
+  });
+
+  app.get(`/api/expenses`, async (req, res) => {
+    const expenses = await Expenses.find();
+
+    return res.status(200).send(expenses);
   });
 
   app.post(`/api/profile`, async (req, res) => {
