@@ -12,53 +12,57 @@ const expenseSchema = new Schema({
     },
   ],
 
-  packaging: String,
+  packaging: [
+
+  {
+    packaging: String,
+    cost: Number,
+    unitsPackage: Number,
+    priceUnit: Number,
+
+   },
+  ],
+
+  decorations: [
+
+    {
+      decorations: String,
+      cost: Number,
+      unitsPackage: String,
+      priceUnit: Number,
+    }
+  ],
+
+  cleaning: [
+
+    {
+      cleaning: String,
+      item: String,
+      unitsPackage: Number,
+      priceUnit: Number,
+    }
+  ],
+
+  utilties: [
+
+    {
+      utilities: String,
+      cost: Number,
+    }
+  ],
+
+  time: [
+
+    {
+      mixing: Number,
+      hourlyRate: Number,
+      cost: Number,
+      hours: Number,
+    }
+  ],
+
+
 });
 
 mongoose.model("expenses", expenseSchema);
 
-//   {
-//     "ingredient": "Baking Powder",
-//     "cost": 1,
-//     "packageSize": 160,
-//     "unit": "grams"
-//   }
-// ],
-// "packaging": [
-//   {
-//     "packaging": "cakebox",
-//     "cost": 1,
-//     "unitsPackage": 1,
-//     "priceUnit": 1
-//   }
-// ],
-// "decorations": [
-//   {
-//     "decoration": "powder",
-//     "cost": 1,
-//     "unitsPackage": 1,
-//     "priceUnit": 1
-//   }
-// ],
-// "cleaning": [
-//   {
-//     "item": "bleach",
-//     "unitsPackage": 1,
-//     "priceUnit": 1
-//   }
-// ],
-// "utilities": [
-//   {
-//     "utilities": "mobilePhone",
-//     "cost": 1
-//   }
-// ],
-// "time": [
-//   {
-//     "mixing": 30,
-//     "hourlyRate": 15,
-//     "cost": 12,
-//     "hours": 1
-//   }
-// ]
-// }
