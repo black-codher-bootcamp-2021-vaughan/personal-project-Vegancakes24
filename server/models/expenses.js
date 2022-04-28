@@ -8,6 +8,7 @@ const expenseSchema = new Schema({
       ingredient: String,
       cost: Number,
       package_Size: Number,
+      quantity: Number,
       unit: String,
     },
   ],
