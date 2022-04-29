@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Expenses from './Expenses';
-import {Ingredients}from './Calculator/Ingredients'
+import {Ingredients}from './Calculator/Ingredients/Ingredients'
 
 ReactDOM.render(
   <React.StrictMode>

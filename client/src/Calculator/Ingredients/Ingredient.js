@@ -1,5 +1,7 @@
 import React from "react";
 
+
+//all things that are between line 11 to the bottom
 export const Calculator = () => {
   const [ingredients, setIngredients] = React.useState();
 const handleSubmit = (event) => {
