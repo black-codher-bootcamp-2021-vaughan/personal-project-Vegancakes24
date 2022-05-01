@@ -1,16 +1,15 @@
 import React from "react";
-import IngredientRow from "./IngredientRow";
-import IngredientForm from "./IngredientForm";
+import PackingRow from "./PackingRow";
+import PackingForm from "./PackingForm";
 
-export const Ingredients = ({ingredients, addIngredient, total}) => {
+export const Packings = ({packings, addPacking, total}) => {
   //ingredients is an array wit the information that we want to render//
   //Set ingredients is a ffunction that we can use to overide the ingredient//
   //Use State is a method from React that allows to rerender the component when set ingredients is called
   //Ingredients adn set ingredients could have any name e.g Rows and setRows
   
 
-
-
+  
   //Ask user input to add on ingredient
   //As a user I eant to add one ingredient and see the toatl expense for that ingredient
   //As a user I want to be able to to add another ingredient and see the totoatl expense for both of the ingredients added.
@@ -19,31 +18,20 @@ export const Ingredients = ({ingredients, addIngredient, total}) => {
   //hwhich steps the users need to do to add an ingredirent//
 
   return (
-    <form> 
+    <form action="" method="get">
       <table>
-        <thead>
-          <tr>
-            <th>Ingredient</th>
-            <th>Cost</th>
-            <th>Package Size</th>
-            <th>Quantity</th>
-            <th>Unit</th>
-            <th>Total</th>
-          </tr>
-        </thead>
-        <tbody>
-          <IngredientForm addIngredient={addIngredient} />
-
-          {ingredients &&
-            ingredients.map((element, index) => {
-              return (
-                <IngredientRow
-                  element={element}
-                  key={element.ingredient + index}
-                />
-              );
-            })}
-        </tbody>
+        <tr>
+          <th>Packaging</th>
+          <th>Cost</th>
+          <th>Package Size</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+        <PackingForm addPacking={addPacking} />
+        {packings &&
+          packings.map((element, index) => {
+            return <PackingRow element={element} key={element.packing + index}/>;
+          })}
       </table>
 
       <p>

@@ -36,7 +36,7 @@ const IngredientForm = ({ addIngredient }) => {
         <input type="text" name="unit" id="unit" required onChange={updateNewIngredient}/>
       </td>
       <td>
-        <button onClick={() => addIngredient(newIngredient)}>
+        <button onClick={(event) => addIngredient(newIngredient, event)}>
           Add Ingredient
         </button>
       </td>

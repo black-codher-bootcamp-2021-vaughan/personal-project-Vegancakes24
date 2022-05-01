@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import Expenses from './Expenses';
-import {Ingredients}from './Calculator/Ingredients/Ingredients'
+import {Calculator}from './Calculator/Calculator'
+
 
 ReactDOM.render(
   <React.StrictMode>
     {/* <App />
     <Expenses/> */}
-    <Ingredients/>
+   <Calculator/>
   </React.StrictMode>,
   document.getElementById('root')
 );
