@@ -1,34 +1,26 @@
 import React from "react";
 import { Ingredients } from "./Ingredients/Ingredients";
 import { Packings } from "./Packagings/Packings";
+import { Decoratings } from "./Decoratings/Decoratings";
 
 export const Calculator = () => {
-  const [ingredients, setIngredients] = React.useState([
-    {
-      ingredient: "Baking Powder",
-      cost: 1,
-      packageSize: 160,
-      quantity: 3,
-      unit: "grams",
-      total: 0.3,
-    },
+  const [ingredients, setIngredients] = React.useState([]);
+
+  const [packings, setPackings] = React.useState([]);
+
+  const [decoratings, setDecoratings] = React.useState([
+   
   ]);
 
-  const [packings, setPackings] = React.useState([
-    {
-      packing: "Cake Board",
-      cost: 1,
-      packageSize: 1,
-      quantity: 1,
-      total: 0.3,
-    },
-  ]);
   const ingredientsTotal = ingredients.reduce((sum, currentElement) => {
     return sum + currentElement.total;
   }, 0);
-const packingTotal = packings.reduce((sum, currentElement) => {
+  const packingTotal = packings.reduce((sum, currentElement) => {
     return sum + currentElement.total;
-  }, 0)
+  }, 0);
+  const decoratingTotal = decoratings.reduce((sum, currentElement) => {
+    return sum + currentElement.total;
+  }, 0);
 
   const addIngredient = (newIngredient, event) => {
     event.preventDefault();
@@ -45,7 +37,7 @@ const packingTotal = packings.reduce((sum, currentElement) => {
   };
 
   const addPacking = (newPacking, event) => {
-    event.preventDefault()
+    event.preventDefault();
     const newPackings = [
       ...packings,
       {
@@ -57,17 +49,45 @@ const packingTotal = packings.reduce((sum, currentElement) => {
     setPackings(newPackings);
   };
 
+  const addDecorating = (newDecorating, event) => {
+    event.preventDefault();
+    const newDecoratings = [
+      ...decoratings,
+      {
+        ...newDecorating,
+        total:
+          (newDecorating.cost / newDecorating.packageSize) *
+          newDecorating.quantity,
+        //  this calculation has changed
+      },
+    ];
+    setDecoratings(newDecoratings);
+  };
 
   return (
     <div>
-      <Ingredients ingredients={ingredients} addIngredient={addIngredient} total={ingredientsTotal}/>
+      <Ingredients
+        ingredients={ingredients}
+        addIngredient={addIngredient}
+        total={ingredientsTotal}
+      />
 
-      <Packings packings={packings} addPacking={addPacking} total={packingTotal}/>
+      <Packings
+        packings={packings}
+        addPacking={addPacking}
+        total={packingTotal}
+      />
 
-      <h1>Total
-          {ingredientsTotal + packingTotal}
+      <Decoratings
+        decoratingss={decoratings}
+        addDecorating={addDecorating}
+        total={decoratingTotal}
+      />
+
+      <h1>
+        Total
+        {ingredientsTotal + packingTotal + decoratingTotal}
       </h1>
-
     </div>
   );
 };
