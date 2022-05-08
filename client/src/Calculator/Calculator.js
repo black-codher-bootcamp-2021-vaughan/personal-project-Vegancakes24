@@ -1,16 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Ingredients } from "./Ingredients/Ingredients";
 import { Packings } from "./Packagings/Packings";
 import { Decoratings } from "./Decoratings/Decoratings";
+import { Cleanings } from "./Cleanings/Cleanings";
+import { postExpense } from "../services/profileService";
 
 export const Calculator = () => {
   const [ingredients, setIngredients] = React.useState([]);
 
   const [packings, setPackings] = React.useState([]);
 
-  const [decoratings, setDecoratings] = React.useState([
-   
-  ]);
+  const [decoratings, setDecoratings] = React.useState([]);
+
+  const [cleanings, setCleanings] = React.useState([]);
+
+  const [finalExpense, setFinalExpense] = React.useState({
+    ingredients: [],
+    packaging: [],
+    decorations: [],
+    cleaning: [],
+  });
 
   const ingredientsTotal = ingredients.reduce((sum, currentElement) => {
     return sum + currentElement.total;
@@ -21,6 +30,21 @@ export const Calculator = () => {
   const decoratingTotal = decoratings.reduce((sum, currentElement) => {
     return sum + currentElement.total;
   }, 0);
+
+  const cleaningTotal = cleanings.reduce((sum, currentElement) => {
+    return sum + currentElement.total;
+  }, 0);
+
+  useEffect(() => {
+    const updatedExpense = {
+      ingredients: ingredients,
+      packaging: packings,
+      decorations: decoratings,
+      cleaning: cleanings, 
+      total: ingredientsTotal + packingTotal + decoratingTotal + cleaningTotal
+    };
+    setFinalExpense(updatedExpense);
+  }, [ingredients, packings, decoratings, cleanings]);
 
   const addIngredient = (newIngredient, event) => {
     event.preventDefault();
@@ -64,8 +88,23 @@ export const Calculator = () => {
     setDecoratings(newDecoratings);
   };
 
+  const addCleaning = (newCleaning, event) => {
+    event.preventDefault();
+    const newCleanings = [
+      ...cleanings,
+      {
+        ...newCleaning,
+        total:
+          (newCleaning.cost / newCleaning.cleaningSize) * newCleaning.quantity,
+        //  this calculation has changed
+      },
+    ];
+    setCleanings(newCleanings);
+  };
   return (
     <div>
+      <img src="/logo192.png" />
+      <h1>Cake Calculator</h1>
       <Ingredients
         ingredients={ingredients}
         addIngredient={addIngredient}
@@ -79,15 +118,22 @@ export const Calculator = () => {
       />
 
       <Decoratings
-        decoratingss={decoratings}
+        decoratings={decoratings}
         addDecorating={addDecorating}
         total={decoratingTotal}
       />
 
+      <Cleanings
+        cleanings={cleanings}
+        addCleaning={addCleaning}
+        total={cleaningTotal}
+      />
+
       <h1>
         Total
-        {ingredientsTotal + packingTotal + decoratingTotal}
+        {ingredientsTotal + packingTotal + decoratingTotal + cleaningTotal}
       </h1>
+      <button onClick = {()=> postExpense(finalExpense)}>Save Expense</button>
     </div>
   );
 };

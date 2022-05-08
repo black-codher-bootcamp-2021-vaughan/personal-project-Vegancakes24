@@ -12,5 +12,10 @@ const getAllExpenses = async () => {
   return response.data || [];
 };
 
+const postExpense = async (finalExpense) => {
+  const response = await axios.post('/api/expenses', finalExpense);
+  return response.data || [];
+}
+
 // All of the endpoints in this file can be exported below
-export { getAllUsers, getAllExpenses };
+export { getAllUsers, getAllExpenses, postExpense};

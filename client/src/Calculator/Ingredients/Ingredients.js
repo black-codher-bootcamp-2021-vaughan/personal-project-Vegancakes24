@@ -15,7 +15,7 @@ export const Ingredients = ({ingredients, addIngredient, total}) => {
   //hwhich steps the users need to do to add an ingredirent//
   return (
     <form> 
-      <table>
+      <table className="ingredient-container">
         <thead>
           <tr>
             <th>Ingredient</th>

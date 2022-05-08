@@ -3,67 +3,61 @@ const { Schema } = mongoose;
 
 const expenseSchema = new Schema({
   userId: Number,
+  total: Number,
   ingredients: [
     {
       ingredient: String,
       cost: Number,
-      package_Size: Number,
+      packageSize: Number,
       quantity: Number,
       unit: String,
     },
   ],
 
   packaging: [
-
-  {
-    packaging: String,
-    cost: Number,
-    unitsPackage: Number,
-    priceUnit: Number,
-
-   },
+    {
+      packing: String,
+      cost: Number,
+      quantity: Number,
+      packageSize: Number,
+    },
   ],
 
   decorations: [
-
     {
-      decorations: String,
+      decorating: String,
       cost: Number,
-      unitsPackage: String,
-      priceUnit: Number,
-    }
+      packageSize: Number,
+      quantity: Number,
+      unit: String,
+    },
   ],
 
   cleaning: [
-
     {
       cleaning: String,
-      item: String,
-      unitsPackage: Number,
-      priceUnit: Number,
-    }
+      cost: Number,
+      packageSize: Number,
+      quantity: Number,
+      unit: String,
+    },
   ],
 
   utilties: [
-
     {
       utilities: String,
       cost: Number,
-    }
+    },
   ],
 
   time: [
-
     {
       mixing: Number,
       hourlyRate: Number,
       cost: Number,
       hours: Number,
-    }
+    },
   ],
-
-
 });
 
 mongoose.model("expenses", expenseSchema);
-

@@ -20,7 +20,7 @@ function Expenses() {
   const renderExpense = (expense) => {
     return (
       <li key={expense._id}>
-        Expenses here
+        {expense.total}
       </li>
     );
   };

@@ -15,12 +15,12 @@ const profileRoutes = (app) => {
     return res.status(200).send(expenses);
   });
 
-  app.post(`/api/profile`, async (req, res) => {
-    const profile = await Profile.create(req.body);
+  app.post(`/api/expenses`, async (req, res) => {
+    const expense = await Expenses.create(req.body);
 
     return res.status(201).send({
       error: false,
-      profile,
+      expense,
     });
   });
 
