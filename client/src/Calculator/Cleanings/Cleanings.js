@@ -15,7 +15,7 @@ export const Cleanings = ({cleanings, addCleaning, total}) => {
   //hwhich steps the users need to do to add an ingredirent//
   return (
     <form> 
-      <table>
+      <table className="cleaning-container">
         <thead>
           <tr>
             <th>Cleaning</th>

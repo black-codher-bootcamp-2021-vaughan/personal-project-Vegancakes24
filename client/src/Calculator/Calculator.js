@@ -5,6 +5,8 @@ import { Decoratings } from "./Decoratings/Decoratings";
 import { Cleanings } from "./Cleanings/Cleanings";
 import { postExpense } from "../services/profileService";
 
+
+
 export const Calculator = () => {
   const [ingredients, setIngredients] = React.useState([]);
 
@@ -102,8 +104,9 @@ export const Calculator = () => {
     setCleanings(newCleanings);
   };
   return (
-    <div>
-      <img src="/logo192.png" />
+    <div className='calculator'>
+
+      <img src="/rachels-cake-delights-logo-500px.jpeg" />
       <h1>Cake Calculator</h1>
       <Ingredients
         ingredients={ingredients}

@@ -19,7 +19,7 @@ export const Packings = ({packings, addPacking, total}) => {
 
   return (
     <form action="" method="get">
-      <table>
+      <table className="packing-container">
         <tr>
           <th>Packaging</th>
           <th>Cost</th>

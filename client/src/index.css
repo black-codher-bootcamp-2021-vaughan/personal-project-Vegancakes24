@@ -12,5 +12,51 @@ code {
     monospace;
 }
 .ingredient-container {
-  background-color: blue;
+  background-color: #e47277;
+  
+
+  }
+
+.packing-container {
+  background-color: #e47277;
+  
+}
+
+.decorating-container {
+  background-color: #e47277;
+  
+}
+
+.cleaning-container {
+  background-color: #e47277;
+  
+}
+
+.calculator {
+  margin: auto;
+  width: max-content;
+  
+
+}
+
+.Index {
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: #e47277;
+  color: white;
+}
+
+.nav-links{
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+
 }

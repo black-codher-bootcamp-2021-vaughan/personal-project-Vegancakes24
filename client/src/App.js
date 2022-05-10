@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 
+
 // SERVICES THAT CALL OUR API ENDPOINTS
 import { getAllUsers } from "./services/profileService";
 
 function App() {
-  const [users, setUsers]= useState(null);
+  
+  const [users, setUsers] = useState(null);
 
   useEffect(() => {
     async function getUsers() {
@@ -12,7 +14,7 @@ function App() {
         const response = await getAllUsers();
         setUsers(response);
       }
-    }
+}
 
     getUsers();
   }, [users]);
@@ -40,6 +42,5 @@ function App() {
       </ul>
     </div>
   );
-}
-
-export default App;
+  }
+//  export default App;

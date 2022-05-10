@@ -16,7 +16,7 @@ export const Decoratings = ({decoratings, addDecorating, total}) => {
 //   //hwhich steps the users need to do to add an ingredirent//
 return (
   <form>
-    <table>
+    <table className="decorating-container">
       <thead>
         <tr>
           <th>Decorating</th>
