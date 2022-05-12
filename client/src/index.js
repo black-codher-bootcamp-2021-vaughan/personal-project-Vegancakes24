@@ -2,11 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './index.css';
-import Expenses from './Expenses';
+// import Expenses from './Expenses';
 import {Calculator}from './Calculator/Calculator'
 import Nav from "./NavBar/Nav";
 import About from "./NavBar/About";
-import Calculation from "./NavBar/Calculation";
+// import Calculation from "./NavBar/Calculation";
 import Contact from "./NavBar/Contact";
 
 const Home = () => (

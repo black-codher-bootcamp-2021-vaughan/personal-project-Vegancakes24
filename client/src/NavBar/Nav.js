@@ -7,7 +7,7 @@ function Nav() {
   };
   return (
     <nav>
-      <h3>Logo</h3>
+      <img src="/rachels-cake-delights-logo-500px.jpeg" alt="" />
       <ul className="nav-links">
         <Link style={navStyle} to="/calculation">
           <li>Calculation</li>

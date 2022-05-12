@@ -106,7 +106,7 @@ export const Calculator = () => {
   return (
     <div className='calculator'>
 
-      <img src="/rachels-cake-delights-logo-500px.jpeg" />
+      
       <h1>Cake Calculator</h1>
       <Ingredients
         ingredients={ingredients}
@@ -134,7 +134,7 @@ export const Calculator = () => {
 
       <h1>
         Total
-        {ingredientsTotal + packingTotal + decoratingTotal + cleaningTotal}
+         {ingredientsTotal + packingTotal + decoratingTotal + cleaningTotal}
       </h1>
       <button onClick = {()=> postExpense(finalExpense)}>Save Expense</button>
     </div>

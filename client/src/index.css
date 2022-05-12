@@ -18,7 +18,7 @@ code {
   }
 
 .packing-container {
-  background-color: #e47277;
+  background-color: #5e3c3e;
   
 }
 
@@ -28,13 +28,14 @@ code {
 }
 
 .cleaning-container {
-  background-color: #e47277;
+  background-color: #5e3c3e;
   
 }
 
 .calculator {
   margin: auto;
   width: max-content;
+  
   
 
 }
@@ -58,5 +59,13 @@ nav {
   justify-content: space-around;
   align-items: center;
   list-style: none;
+  font-size: 40px;
 
+}
+
+ #page-wrap{
+  width: 800px;
+  margin: 0 auto;
+
+  
 }
